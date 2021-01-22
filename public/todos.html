@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Todo Management App</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' media='screen' href='reset.css'>
+  <link rel='stylesheet' type='text/css' media='screen' href='todo-app.css'>
+</head>
+<body>
+  <main>
+    <article>
+      <h1>My To-do List</h1>
+      <section class = "add-todo-section">
+        <input type = "text" placeholder="What's next?"/>
+        <input type = "date" />
+        <input type = "button" value = "Add"/>
+      </section>
+
+      <section class = "due-today">
+        <div class = "heading">
+          <h2>Due Today</h2>
+          <div class = "total-completed"> 0/4 </div>
+        </div>
+        <ul>
+          <li>
+            <input type = 'checkbox' />
+            <label> Type something </label>
+            <p class = "overdue"> Overdue </p>
+            <img src = "trash-can-outline.png" />
+          </li>
+          
+          <li>
+            <input type = 'checkbox' />
+            <label> Type something </label>
+            <img src = "trash-can-outline.png" />
+          </li>
+        </ul>
+      </section>
+
+      <section class = "due-tomorrow">
+        <div class = "heading">
+          <h2>Due Tomorrow</h2>
+          <div class = "total-completed"> 0/4 </div>
+        </div>
+        <ul>
+          <li>
+            <input type = 'checkbox' />
+            <label> Type something </label>
+            <img src = "trash-can-outline.png" />
+          </li>
+      </section>
+
+      <section class = "remaining">
+        <div class = "heading">
+          <h2>Remaining</h2>
+          <div class = "total-completed"> 0/4 </div>
+        </div>
+        <ul>
+          <li>
+            <input type = 'checkbox' />
+            <label> Type something </label>
+            <p> Jan 21 </p>
+            <img src = "trash-can-outline.png" />
+          </li>
+          
+          <li>
+            <input type = 'checkbox' />
+            <label> Type something </label>
+            <p> Jan 21 </p>
+            <img src = "trash-can-outline.png" />
+          </li>
+          
+          <li>
+            <input type = 'checkbox' />
+            <label> Type something </label>
+            <p> Jan 21 </p>
+            <img src = "trash-can-outline.png" />
+          </li>
+        </ul>
+      </section>
+    </article>
+  </main>
+</body>
+</html>
