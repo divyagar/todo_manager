@@ -1,4 +1,4 @@
-<section class = "due-today">
+<section>
   <div class = "heading">
     <h2><%= heading %></h2>
     <div class = "total-completed"> <%= todos.isCompleted.count %>/<%= todos.count %> </div>
@@ -6,7 +6,15 @@
   <ul>
     <% todos.each do |todo| %>
       <li>
-        <input type = 'checkbox' <%= todo.completed ? "checked" : "" %>/>
+        <%= form_with(url: "/todos/#{todo.id}", method: "put") do %>
+          <input 
+            type = 'checkbox' 
+            name = "completed" 
+            <%= todo.completed ? "checked" : "" %> 
+            onclick="this.form.submit()"
+          />
+        <% end %>
+
         <label style="text-decoration-line : <%= todo.completed ? 'line-through' : 'none' %>"> 
           <%= todo.todo_text %>
         </label>
@@ -15,7 +23,9 @@
             <%= todo.due_date.to_s(:short) %>
           </p>
         <% end %>
-        <img src = "trash-can-outline.png" />
+        <%= form_with(url: "/todos/#{todo.id}", method: "delete") do %>
+          <input type = "image" src = "trash-can-outline.png" />
+        <% end %>
       </li>
     <% end %>
   </ul>
