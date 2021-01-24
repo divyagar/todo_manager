@@ -15,38 +15,42 @@ article h1 {
   font-weight: 600;
 }
 
-section.add-todo-section {
+form.add-todo-section {
   display: flex;
   align-items: stretch;
   margin: 10px 0px 20px;
 }
 
-section.add-todo-section input {
+form.add-todo-section input {
   border-radius: 4px;
   border: 1px solid #aaa;
 }
 
-section.add-todo-section input[type=text] {
+form.add-todo-section input[type=text] {
   width: 190px;
   height: 32px;
   padding-left: 10px;
 }
 
-section.add-todo-section input[type=date] {
+form.add-todo-section input[type=date] {
   padding-left: 10px;
   margin: 0px 10px;
 }
 
-section.add-todo-section input[type=button] {
+form.add-todo-section input[type=submit] {
   width: 72px;
   background: #48BB78;
   color: white;
+  outline: none;
+  cursor: pointer;
 }
 
 section h2 {
   font-size: 14px;
   font-weight: 600;
   margin-right: 7px;
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
 
 div.total-completed {
@@ -62,7 +66,7 @@ ul li {
   display: flex;
   align-items: center;
   font-size: 14px;
-  margin: 13px;
+  margin: 10px 13px;
   color: #453C52;
   padding: 2px;
 }

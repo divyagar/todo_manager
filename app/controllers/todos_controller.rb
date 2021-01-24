@@ -20,7 +20,7 @@ class TodosController < ApplicationController
         due_date: due_date,
         completed: false
     )
-    render plain: "done"
+    redirect_to todos_path
   end
 
   def update
