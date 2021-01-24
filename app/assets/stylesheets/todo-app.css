@@ -79,13 +79,9 @@ ul li label {
   margin: 0px 7px;
 }
 
-li p {
-  font-size: 12px;
+li p.due-date {
+  font-size: 11px;
   margin-right: 7px;
-}
-
-li p.overdue {
-  color: #C53030;
 }
 
 li img {

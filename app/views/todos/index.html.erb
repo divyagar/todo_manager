@@ -1,6 +1,28 @@
-<h1> this is index html file <h1>
+<main>
+  <article>
+    <h1>My To-do List</h1>
+    <section class = "add-todo-section">
+      <input type = "text" placeholder="What's next?"/>
+      <input type = "date" />
+      <input type = "button" value = "Add"/>
+    </section>
 
-<%= Todo.first.todo_text %>
-<% Todo.all.each do |todo| %>
-  <div> <%= todo.todo_text %> </div>
-<% end %>
+    <%= render partial: "section", locals: {
+      heading: "Overdue", 
+      todos: Todo.overdue,
+      show_due_date: true
+    }%>
+
+    <%= render partial: "section", locals: {
+      heading: "Due today", 
+      todos: Todo.due_today,
+      show_due_date: false
+    } %>
+
+    <%= render partial: "section", locals: {
+      heading: "Due later", 
+      todos: Todo.due_later,
+      show_due_date: true
+    } %>
+  </article>
+</main>
