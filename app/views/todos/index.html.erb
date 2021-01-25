@@ -1,11 +1,11 @@
 <main>
   <article>
     <h1>My To-do List</h1>
-    <form class = "add-todo-section" method = "post" action ="/todos">
+    <%= form_with(url: "/todos", method: "post", class: "add-todo-section") do %>
       <input type = "text" placeholder="What's next?" name = "todo_text"/>
       <input type = "date" name = "due_date"/>
       <input type = "submit" value = "Add"/>
-    </form>
+    <% end %>
 
     <%= render partial: "section", locals: {
       heading: "Overdue", 
