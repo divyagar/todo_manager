@@ -23,6 +23,13 @@
         </div>
       </div>
     <% end %>
+
+    <% if(flash[:error]) %>
+      <div class = "error-msg">
+        <%= flash[:error] %>
+      </div>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
