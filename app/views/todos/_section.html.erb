@@ -8,9 +8,9 @@
       <li>
         <%= form_with(url: "/todos/#{todo.id}", method: "put") do %>
           <%= 
-            check_box_tag :completed, 
-            "completed", todo.completed ? true : false, 
-            onclick: "this.form.submit()" 
+            check_box_tag :completed,
+            "completed", todo.completed ? true : false,
+            onclick: "this.form.submit()"
           %>
         <% end %>
 

@@ -25,7 +25,8 @@ class UsersController < ApplicationController
       email: email,
       password: password
     )
-    render plain: "New user is created with id #{user.id}"
+    session[:current_user_id] = user.id
+    redirect_to todos_path
   end
 
   def login
