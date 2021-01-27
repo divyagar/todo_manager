@@ -12,9 +12,16 @@
 
   <body>
     <% if @current_user %>
-      <p>
-        <%= @current_user.first_name %>
-      </p>
+      <div class = "current-login">
+        <div class = "UserDiv">
+          <p>
+            Welcome <%= @current_user.first_name %>
+          </p>
+          <p>
+            <%= link_to "Sign-out", destroy_session_path, method: "delete" %>
+          </p>
+        </div>
+      </div>
     <% end %>
     <%= yield %>
   </body>
