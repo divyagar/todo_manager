@@ -1,2 +1,11 @@
-<p> Welcome to the todo homepage </p>
-<p> If you are a new user Sign up here </p>
+<section class = "home">
+  <div>
+    <h2 class = "home-heading"> Welcome to the todo homepage </h2>
+  </div>
+  <div>
+    <p> If you are a new user, <%= link_to "Sign up here", new_user_path %> </p>
+  </div>
+  <div>
+    <p> If you are a new user, <%= link_to "Sign in here", new_sessions_path %> </p>
+  </div>
+</section>
