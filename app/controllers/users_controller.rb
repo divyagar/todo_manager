@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   skip_before_action :verify_authenticity_token
 
   def index
@@ -12,12 +13,14 @@ class UsersController < ApplicationController
   end
 
   def create
-    name = params[:name]
+    first_name = params[:first_name]
+    last_name = params[:last_name]
     email = params[:email]
     password = params[:password]
 
     user = User.create!(
-      name: name,
+      first_name: first_name,
+      last_name: last_name,
       email: email,
       password: password
     )
@@ -29,5 +32,9 @@ class UsersController < ApplicationController
     password = params[:password]
     user = User.where("email = ? and password = ?", email, password)
     render plain: (user.count != 0)
+  end
+
+  def new
+    render "users/new"
   end
 end
