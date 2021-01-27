@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
-    render plain: User.all.map { |user| user.to_displayable_string}.join("\n")
+    render plain: "Index page of users"
   end
 
   def show
@@ -19,14 +19,20 @@ class UsersController < ApplicationController
     email = params[:email]
     password = params[:password]
 
-    user = User.create!(
+    user = User.new(
       first_name: first_name,
       last_name: last_name,
       email: email,
       password: password
     )
-    session[:current_user_id] = user.id
-    redirect_to todos_path
+
+    if user.save
+      session[:current_user_id] = user.id
+      redirect_to todos_path
+    else
+      flash[:error] = user.errors.full_messages.join(", ")
+      redirect_to new_user_path
+    end
   end
 
   def login
