@@ -1,5 +1,4 @@
 .current-login {
-  display: block;
   padding: 7px 2px;
   margin: 10px 0px;
   background: lightgray;
@@ -10,6 +9,12 @@
   justify-content: space-between;
 }
 
+.current-login a {
+  text-decoration: none;
+  padding: 2px 5px;
+}
+
 div.error-msg {
   color: red;
+  margin: 10px 0px;
 }

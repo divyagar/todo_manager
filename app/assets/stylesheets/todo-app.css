@@ -5,6 +5,7 @@
 body {
   max-width: 400px;
   margin: 50px auto;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 article h1 {
